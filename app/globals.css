@@ -1,27 +1,278 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700&display=swap");
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@tailwind base;
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+*::-webkit-scrollbar {
+  width: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
+*::-webkit-scrollbar-track {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 14px;
+  border: 3px solid var(--primary);
+}
+
+@tailwind components;
+
+@font-face {
+  font-family: Helvetica;
+  font-weight: 700;
+  font-style: normal;
+  src: url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.39bee04bd277a9c4e94e2fd42d53f4e3c0afb8a5.woff2?&hmac=b99c35ba03edd5495ba7af87326d5fe8af5b2363f485475338ae16401b9af50d")
+      format("woff2"),
+    url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.b95359461a6788d5549e702cb2123bc40c227e49.woff?&hmac=684bc7a600f408db705c8f9b90d3d964d22c13a8ce7492386d351a852f30309b")
+      format("woff");
+}
+
+@font-face {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: normal;
+  src: url("https://fonts.shopifycdn.com/helvetica/helvetica_n4.fe093fe9ca22a15354813c912484945a36b79146.woff2?&hmac=64c57d7fee8da8223a0d4856285068c02c248ef210cae57dcd9c3e633375e8a4")
+      format("woff2"),
+    url("https://fonts.shopifycdn.com/helvetica/helvetica_n4.8bddb85c18a0094c427a9bf65dee963ad88de4e8.woff?&hmac=f74109e3105603c8a8cfbd8dec4e8a7e53572346fb96aacec203fc3881ddabf1")
+      format("woff");
+}
+
+@font-face {
+  font-family: Helvetica;
+  font-weight: 700;
+  font-style: normal;
+  src: url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.39bee04bd277a9c4e94e2fd42d53f4e3c0afb8a5.woff2?&hmac=b99c35ba03edd5495ba7af87326d5fe8af5b2363f485475338ae16401b9af50d")
+      format("woff2"),
+    url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.b95359461a6788d5549e702cb2123bc40c227e49.woff?&hmac=684bc7a600f408db705c8f9b90d3d964d22c13a8ce7492386d351a852f30309b")
+      format("woff");
+}
+
+@font-face {
+  font-family: Helvetica;
+  font-weight: 700;
+  font-style: normal;
+  src: url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.39bee04bd277a9c4e94e2fd42d53f4e3c0afb8a5.woff2?&hmac=b99c35ba03edd5495ba7af87326d5fe8af5b2363f485475338ae16401b9af50d")
+      format("woff2"),
+    url("https://fonts.shopifycdn.com/helvetica/helvetica_n7.b95359461a6788d5549e702cb2123bc40c227e49.woff?&hmac=684bc7a600f408db705c8f9b90d3d964d22c13a8ce7492386d351a852f30309b")
+      format("woff");
+}
+
+@font-face {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: oblique;
+  src: url("https://fonts.shopifycdn.com/helvetica/helvetica_o4.f9832a0fc1ee8fc5a359636e410d6941e1e4ca03.woff2?&hmac=775a8a34e13ea386c331d51fd5f061993cd3135ce54cc4ed2b9254f3a3be05df")
+      format("woff2"),
+    url("https://fonts.shopifycdn.com/helvetica/helvetica_o4.0063286aec443697ebae04eeb9c78b820f9f7805.woff?&hmac=32c2cf4f29cdfb274d76aeb45a9a8b5c97eb6a9255cc2073ee5c1a85140ad7fe")
+      format("woff");
+}
+
+@font-face {
+  font-family: Helvetica;
+  font-weight: 700;
+  font-style: oblique;
+  src: url("https://fonts.shopifycdn.com/helvetica/helvetica_o7.215fd4ca1a06214fa01e44328a1992c977700ea2.woff2?&hmac=b7d9523eaf6b1e57f158595303d5e41e66c07d43212d2fbfe8df1f4b7d6c1f79")
+      format("woff2"),
+    url("https://fonts.shopifycdn.com/helvetica/helvetica_o7.b0a2026ae2aa64d060f9ce0ee1b3c3c1aa21bf88.woff?&hmac=97dc9f03549c58cc74feee46ffde68daa822080823ae1159e9cd489daf68bcb9")
+      format("woff");
+}
+
+@tailwind utilities;
+
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --primary: transparent;
+    --secondary: #a08a58;
+    --border-radius: 12px;
+    --swiper-theme-color: #a08a58 !important;
+  }
+
+  html,
+  body {
+    font-family: "Helvetica", "Noto Sans Thai", sans-serif;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
+.scroll-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  will-change: transform;
+}
+
+#navbar {
+  transition: all 0.3s !important;
+}
+
+.vertical-timeline::before {
+  background: #000 !important;
+  width: 2px !important;
+}
+
+.arrow-exp {
+  margin-top: -95px;
+  margin-bottom: 100px;
+  position: relative;
+  display: table;
+  margin: auto;
+  text-transform: uppercase;
+
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.arrow-exp::before {
+  content: "";
+  position: absolute;
+  background-image: url("/assets/arrow-exp.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.arrow-exp::after {
+  content: "";
+  position: absolute;
+  background-image: url("/assets/arrow-exp.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.arrow-exp::before {
+  top: 35px;
+  left: 50%;
+  margin-left: -8px;
+  width: 16px;
+  height: 10px;
+}
+
+.arrow-exp::after {
+  top: 35px;
+  left: 50%;
+  margin-left: -6px;
+  width: 12px;
+  height: 7px;
+  animation: anima 1.2s linear infinite;
+}
+
+@keyframes anima {
+  0% {
+    top: 35px;
+    opacity: 1;
+  }
+  100% {
+    top: 60px;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes anima {
+  0% {
+    top: 35px;
+    opacity: 1;
+  }
+  100% {
+    top: 60px;
+    opacity: 0;
+  }
+}
+
+.hamburger-react {
+  width: 40px !important ;
+  height: 40px !important ;
+}
+
+#ripple_effect span {
+  position: absolute;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  animation: animate 2s linear infinite;
+  animation-delay: calc(-1.5s * var(--i));
+}
+
+#horizontal_timeline ul li {
+  background-image: none !important;
+}
+
+#horizontal_timeline ol li {
+  width: auto !important;
+}
+
+#bussiness_card:hover img {
+  -webkit-transform: scale(1.5);
+  transform: scale(1.1);
+}
+
+#bussiness_card img {
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+@keyframes animate {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+:root {
+  --loading-grey: #ededed;
+}
+
+.card {
+  width: 320px;
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.12);
+}
+
+.image {
+  height: 100%;
+}
+
+.loading .image,
+.loading h4,
+.loading .description {
+  background-color: var(--loading-grey);
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
+      100deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 60%
     )
-    rgb(var(--background-start-rgb));
+    var(--loading-grey);
+  background-size: 200% 100%;
+  background-position-x: 180%;
+  animation: 1s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+  to {
+    background-position-x: -20%;
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
