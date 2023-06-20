@@ -7,6 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'Allison': ['Allison', 'cursive'],
+        'body': ['century-gothic', 'sans-serif'],
+        'thai': ['Noto Sans Thai', 'sans-serif'],
+        'kings_caslon': ['kings_caslonregular', 'sans-serif'],
+
+      },
+
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

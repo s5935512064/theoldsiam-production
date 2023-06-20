@@ -1,12 +1,10 @@
 import "../globals.css";
-
-import React, { FC, useEffect, useState, useRef } from "react";
-
 import { useLocale } from "next-intl";
 import { notFound } from "next/navigation";
-
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Transition from "./components/Transition";
+import React, { FC, useEffect, useState, useRef } from "react";
 
 interface Props {
   children: React.ReactNode;
@@ -25,7 +23,8 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={locale}>
       <body className="min-h-screen w-full h-full flex flex-col items-center ">
         <Navbar />
-        <div className="flex-1 w-full">{children}</div>
+        <Transition children={children} />
+
         <Footer />
       </body>
     </html>

@@ -1,11 +1,10 @@
-"use client";
-
 import React from "react";
 import { useTranslations } from "next-intl";
 
-export const metadata = {
-  title: "Promotion & Event",
-  description: "Product Details Desc",
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
 };
 
 export default function PromotionEvent() {

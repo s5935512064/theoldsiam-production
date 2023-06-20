@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Allison&display=swap");
 
 @tailwind base;
 
@@ -22,6 +23,22 @@
 }
 
 @tailwind components;
+
+@font-face {
+  font-family: "kings_caslonregular";
+  src: url("/fonts/kings_caslon-webfont.woff2") format("woff2"),
+    url("/fonts/kings_caslon-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "helenehessregular";
+  src: url("/fonts/helenehess-regular-webfont.woff2") format("woff2"),
+    url("/fonts/helenehess-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
   font-family: Helvetica;
@@ -88,14 +105,15 @@
 @layer base {
   :root {
     --primary: transparent;
-    --secondary: #a08a58;
+    --secondary: #0a3254;
     --border-radius: 12px;
-    --swiper-theme-color: #a08a58 !important;
+    --swiper-theme-color: #0a3254 !important;
   }
 
   html,
   body {
     font-family: "Helvetica", "Noto Sans Thai", sans-serif;
+    scroll-behavior: smooth !important;
   }
 }
 
@@ -146,7 +164,7 @@
 }
 
 .arrow-exp::before {
-  top: 35px;
+  top: 30px;
   left: 50%;
   margin-left: -8px;
   width: 16px;
@@ -154,7 +172,7 @@
 }
 
 .arrow-exp::after {
-  top: 35px;
+  top: 30px;
   left: 50%;
   margin-left: -6px;
   width: 12px;
@@ -168,7 +186,7 @@
     opacity: 1;
   }
   100% {
-    top: 60px;
+    top: 55px;
     opacity: 0;
   }
 }
@@ -275,4 +293,60 @@
 .scrollbar-hide {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.fade-in {
+  animation: fadeIn ease 10s;
+  -webkit-animation: fadeIn ease 10s;
+  -moz-animation: fadeIn ease 10s;
+  -o-animation: fadeIn ease 10s;
+  -ms-animation: fadeIn ease 10s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#sample-slider .swiper-wrapper {
+  transition-timing-function: linear;
 }

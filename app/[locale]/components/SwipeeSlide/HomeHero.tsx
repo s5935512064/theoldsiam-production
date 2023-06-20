@@ -28,7 +28,8 @@ const HomeHero: FC<Props> = (): JSX.Element => {
     <>
       <Swiper
         slidesPerView={1}
-        spaceBetween={10}
+        effect="fade"
+        spaceBetween={0}
         centeredSlides={true}
         loop={true}
         speed={1500}
@@ -39,14 +40,37 @@ const HomeHero: FC<Props> = (): JSX.Element => {
           delay: 6000,
           disableOnInteraction: false,
         }}
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[Autoplay, Pagination, Navigation, EffectFade]}
         className="h-screen w-full relative"
       >
         <SwiperSlide className="h-screen w-full relative">
           <Image
             fill
+            priority={true}
             unoptimized
             src={"/assets/slide/slide_01.webp"}
+            alt="background"
+            style={{ objectFit: "cover", objectPosition: "center" }}
+          />
+        </SwiperSlide>
+
+        <SwiperSlide className="h-screen w-full relative">
+          <Image
+            fill
+            priority={true}
+            unoptimized
+            src={"/assets/slide/slide_02.webp"}
+            alt="background"
+            style={{ objectFit: "cover", objectPosition: "center" }}
+          />
+        </SwiperSlide>
+
+        <SwiperSlide className="h-screen w-full relative">
+          <Image
+            fill
+            priority={true}
+            unoptimized
+            src={"/assets/slide/slide_03.webp"}
             alt="background"
             style={{ objectFit: "cover", objectPosition: "center" }}
           />

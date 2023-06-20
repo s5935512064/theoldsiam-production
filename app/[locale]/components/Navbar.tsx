@@ -4,6 +4,7 @@ import React, { FC, useEffect, useState, Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next-intl/client";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 interface Props {}
 
@@ -25,6 +26,13 @@ const menu_en = [
 ];
 
 const Navbar: FC<Props> = (): JSX.Element => {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   const pathname = usePathname();
 
   const [navbarOffset, setNavbarOffset] = useState(false);
@@ -60,24 +68,27 @@ const Navbar: FC<Props> = (): JSX.Element => {
     };
   });
 
-  useEffect(() => {
-    console.log({ pathname });
-  });
-
   return (
     <>
+      <div className="fixed bottom-0 w-full h-2 z-50">
+        <motion.div
+          className="inset-0 fixed h-[5px] bg-[#0a3254] origin-[0%]"
+          style={{ scaleX }}
+        />
+      </div>
+
       <div
         id="navbar"
         className={classNames(
           navbarOffset ? "bg-white shadow" : "bg-transparent text-white",
           navbarOffset2 ? "top-0" : "-top-16",
-          "w-full fixed   h-14  px-6 py-1 flex items-center justify-center  z-20 "
+          "w-full fixed   h-14  px-6 py-1 flex items-center justify-center  z-30 "
         )}
       >
         <div className="w-32 h-full  absolute left-6 shrink-0">
           <Link href={"/"}>
             <Image
-              src={"/assets/LOGO-CI.png"}
+              src={navbarOffset ? "/assets/LOGO-CI.png" : "/assets/LOGO-W.png"}
               fill
               alt="logo"
               style={{ objectFit: "contain", objectPosition: "center" }}
@@ -92,8 +103,9 @@ const Navbar: FC<Props> = (): JSX.Element => {
                 type="button"
                 className={classNames(
                   pathname == item.active
-                    ? " text-[#0a3254] font-semibold underline underline-offset-4"
-                    : "opacity-75 text-sm",
+                    ? "font-semibold underline underline-offset-4"
+                    : "text-sm",
+                  navbarOffset ? "text-[#0a3254]" : "text-white",
                   "min-w-[100px] p-2 hover:text-base hover:opacity-100 transition-all duration-200 hover:text-[#0a3254] hover:font-semibold outline-none border-none "
                 )}
               >
