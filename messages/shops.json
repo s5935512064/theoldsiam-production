@@ -1,0 +1,62 @@
+[
+  {
+    "id": "01",
+    "shop_room_no": "",
+    "shop_fl": "2 FL",
+    "shop_name": "AMORN ELECTRONIC",
+    "shop_detail": "-",
+    "shop_tel": "-",
+    "shop_open": "-",
+    "shop_facebook": "-",
+    "shop_line": "-",
+    "shop_website": "-",
+    "shop_instagram": "-",
+    "shop_tag": ["all", "electronic", "2floor"],
+    "shop_logo": "/assets/shoplist/amorn.jpg"
+  },
+  {
+    "id": "02",
+    "shop_room_no": "02",
+    "shop_fl": "2 FL.",
+    "shop_name": "แม่ทองสุก (MTS GOLD)",
+    "shop_detail": "-",
+    "shop_tel": "-",
+    "shop_open": "-",
+    "shop_facebook": "-",
+    "shop_line": "-",
+    "shop_website": "-",
+    "shop_instagram": "-",
+    "shop_tag": ["all", "gold", "jewelry", "watchandjewelry", "3floor"],
+    "shop_logo": "/assets/shoplist/maethongsuk-01.png"
+  },
+  {
+    "id": "03",
+    "shop_room_no": "03",
+    "shop_fl": "1 FL.",
+    "shop_name": "ตุ๊ แพรวา",
+    "shop_detail": "-",
+    "shop_tel": "-",
+    "shop_open": "-",
+    "shop_facebook": "-",
+    "shop_line": "-",
+    "shop_website": "-",
+    "shop_instagram": "-",
+    "shop_tag": ["all", "fashion", "2floor"],
+    "shop_logo": "/assets/shoplist/tuprawa.jpg"
+  },
+  {
+    "id": "04",
+    "shop_room_no": "04",
+    "shop_fl": "1 FL.",
+    "shop_name": "Starbuck",
+    "shop_detail": "-",
+    "shop_tel": "-",
+    "shop_open": "-",
+    "shop_facebook": "-",
+    "shop_line": "-",
+    "shop_website": "-",
+    "shop_instagram": "-",
+    "shop_tag": ["all", "food", "1floor"],
+    "shop_logo": "/assets/shoplist/Starbucks-logo.png"
+  }
+]

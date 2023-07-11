@@ -23,6 +23,12 @@ function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
 }
 
+const slide_image_hero = [
+  { id: 0, src: "/assets/slide/slide_01.webp", alt: "bg_01" },
+  { id: 1, src: "/assets/slide/slide_02.webp", alt: "bg_02" },
+  { id: 2, src: "/assets/slide/slide_03.webp", alt: "bg_03" },
+];
+
 const HomeHero: FC<Props> = (): JSX.Element => {
   return (
     <>
@@ -41,40 +47,20 @@ const HomeHero: FC<Props> = (): JSX.Element => {
           disableOnInteraction: false,
         }}
         modules={[Autoplay, Pagination, Navigation, EffectFade]}
-        className="h-screen w-full relative"
+        className="h-full w-full relative"
       >
-        <SwiperSlide className="h-screen w-full relative">
-          <Image
-            fill
-            priority={true}
-            unoptimized
-            src={"/assets/slide/slide_01.webp"}
-            alt="background"
-            style={{ objectFit: "cover", objectPosition: "center" }}
-          />
-        </SwiperSlide>
-
-        <SwiperSlide className="h-screen w-full relative">
-          <Image
-            fill
-            priority={true}
-            unoptimized
-            src={"/assets/slide/slide_02.webp"}
-            alt="background"
-            style={{ objectFit: "cover", objectPosition: "center" }}
-          />
-        </SwiperSlide>
-
-        <SwiperSlide className="h-screen w-full relative">
-          <Image
-            fill
-            priority={true}
-            unoptimized
-            src={"/assets/slide/slide_03.webp"}
-            alt="background"
-            style={{ objectFit: "cover", objectPosition: "center" }}
-          />
-        </SwiperSlide>
+        {slide_image_hero.map((item, index) => (
+          <SwiperSlide key={index} className="h-full w-full relative">
+            <Image
+              fill
+              priority={true}
+              unoptimized
+              src={item.src}
+              alt={item.alt}
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

@@ -141,8 +141,6 @@
   position: relative;
   display: table;
   margin: auto;
-  text-transform: uppercase;
-
   font-weight: 300;
   letter-spacing: 2px;
 }
@@ -231,6 +229,18 @@
 #bussiness_card img {
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
+}
+
+#bussiness_card #Hover {
+  display: none;
+}
+
+#bussiness_card:hover #Hover {
+  display: flex;
+}
+
+#bussiness_card:hover #notHover {
+  display: none;
 }
 
 @keyframes animate {
@@ -347,6 +357,63 @@
   }
 }
 
-#sample-slider .swiper-wrapper {
-  transition-timing-function: linear;
+.distance-br {
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 16px;
+  position: relative;
+}
+.distance p {
+  margin: 0;
+  padding-left: 24px;
+  position: relative;
+}
+
+.distance svg {
+  height: auto;
+  left: 0;
+  position: absolute;
+  stroke: currentColor;
+  top: 0;
+  width: 16px;
+}
+
+.drive:first-child:not(:last-child) {
+  border-right: 0.5px solid rgba(0, 0, 0, 0.2);
+  padding-right: 16px;
+}
+
+.distance .walk:last-child:not(:first-child) {
+  margin-left: 16px;
+}
+
+.link-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#fff, #fff);
+  background-size: 0 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s ease-in-out;
+}
+
+.link-underline-active {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#fff, #fff);
+  background-size: 0 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s ease-in-out;
+  background-size: 100% 3px;
+  background-position: 0 100%;
+}
+
+.link-underline-black {
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#0a3255, #0a3255);
+}
+
+.link-underline:hover {
+  background-size: 100% 3px;
+  background-position: 0 100%;
 }

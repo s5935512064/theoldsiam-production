@@ -1,5 +1,20 @@
 {
   "Index": {
-    "title": "Hello world!"
+    "title": "Hello world!",
+    "section1": "is a unique business district. It is a gold business center, jewelry, diamonds, weapons, Thai fabric center, the country&apos;s largest foreign imported lace center, a food center, famous Thai desserts and a comfortable residence in the city center, adjacent to Sam Yot Station, It is the first mixed-use project on Rattanakosin Island, and is the largest plaza in this location."
+  },
+  "Contact": {
+    "title": "CONTACT US",
+    "subtitle": "Have any question? We'd love to hear from you.",
+    "name": "THE OLD SIAM PLAZA",
+    "address": "12 Burapha Road, Wang Burapha Phirom, Phra Nakhon, Bangkok 10200",
+    "openning_title": "OPENING HOURS",
+    "openning_detail": "Open daily 09:00 AM. - 20:00 PM.",
+    "call_title": "CALL",
+    "transpot_title": "TRANSPORTATION"
+  },
+  "Footer": {
+    "title": "GET IN TOUCH",
+    "detail": "The Old Siam Plaza is a classic shopping mall on Rattanakosin Island."
   }
 }

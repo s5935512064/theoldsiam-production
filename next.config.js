@@ -1,9 +1,25 @@
-const withNextIntl = require('next-intl/plugin')(
-    // This is the default (also the `src` folder is supported out of the box)
-    './i18n.ts'
-);
+// @ts-check
 
-module.exports = withNextIntl({
-    // Other Next.js configuration ...
-    experimental: { appDir: true }
-});
+/**
+ * @type {import('next').NextConfig}
+ **/
+
+
+const nextConfig = {
+
+    reactStrictMode: true,
+    experimental: { appDir: true },
+    typescript: {
+        ignoreBuildErrors: true,
+    },
+    transpilePackages: ['@fancyapps/ui', 'vanilla-cookieconsent'],
+    webpack: (config, { isServer }) => {
+        if (isServer) {
+            // @ts-ignore
+            require("./scripts/sitemap-generator");
+        }
+        return config;
+    },
+}
+
+module.exports = nextConfig

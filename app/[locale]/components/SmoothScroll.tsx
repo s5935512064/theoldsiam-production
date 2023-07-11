@@ -21,9 +21,9 @@ const SmoothScroll: FC<Props> = ({ linkTo }): JSX.Element => {
       >
         <button
           type="button"
-          className="arrow-exp text-white drop-shadow-2xl h-full outline-none text-xs sm:text-sm "
+          className="arrow-exp text-white drop-shadow-2xl h-full outline-none text-xs uppercase "
         >
-          SCROLL
+          Scroll
         </button>
       </Link>
     </>

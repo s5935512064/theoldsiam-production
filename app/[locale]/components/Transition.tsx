@@ -40,7 +40,7 @@ const Transition: FC<Props> = ({ children }): JSX.Element => {
         animate="enter"
         exit="exit"
         transition={{ type: "spring", duration: 1.5 }}
-        className="flex-1 w-full "
+        className="flex-1 w-full relative h-full"
       >
         {children}
       </motion.main>
