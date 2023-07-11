@@ -481,7 +481,33 @@ export default function Page({ productSelect }: PropductProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+
+//   if (!context.params || typeof context.params.id !== "string") {
+//     return { notFound: true };
+//   }
+
+//   const productId = parseInt(context.params?.id as string) || 1;
+//   const product = news_input;
+
+//   const productSelect = product.find((p) => p.id === context.params?.id);
+
+//   if (!productSelect) {
+//     return (
+//       <div className="w-full h-screen flex justify-center items-center bg-white">
+//         <DotLoader color="#A08A58" />
+//       </div>
+//     );
+//   }
+
+//   return {
+//     props: {
+//       productSelect,
+//     },
+//   };
+// };
+
+export async function generateStaticParams(context: any) {
   if (!context.params || typeof context.params.id !== "string") {
     return { notFound: true };
   }
@@ -504,4 +530,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       productSelect,
     },
   };
-};
+}
